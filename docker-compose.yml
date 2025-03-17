@@ -1,0 +1,20 @@
+# Docker compose file for RabbitMQ using persistent volume
+services:
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+volumes:
+  rabbitmq_data:
+    driver: local
+    driver_opts:
+      type: "none"
+      o: "bind"
+      device: "D:/Docker/Volumes/RabbitMQ/data"
