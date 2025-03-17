@@ -8,6 +8,7 @@ The publisher is a simple C# console app that sends messages to a queue.
 
 ### How to run
 1. Clone the repository
+1. Modify `docker-compose.yml` to set the RabbitMQ persistent volume data location
 1. Run `docker-compose up -d` to start RabbitMQ
 1. Run the consumer project (Debug > Start new instance)
 1. Run the publisher project (Debug > Start new instance)
